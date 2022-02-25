@@ -22,7 +22,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
                 .mvcMatchers(HttpMethod.POST, "/api/register").permitAll()
-                .mvcMatchers(HttpMethod.POST, "/actuator/shutdown").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
